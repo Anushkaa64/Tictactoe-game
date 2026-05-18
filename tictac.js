@@ -33,6 +33,7 @@ const disableBoxes=()=>{
 
 const resetGame=()=>{
     turn0=true;
+    count=0;
     enableBoxes();
     msgContainer.classList.add("hide");
 }
@@ -42,7 +43,12 @@ const gameDraw = () => {
     msgContainer.classList.remove("hide");
     disableBoxes();
 }
-
+const newGame=()=>{
+    turn0=true;
+    count=0;
+    enableBoxes();
+    msgContainer.classList.add("hide");
+}
 
 
 const showWinner=(winner)=>{
@@ -56,17 +62,19 @@ const checkWinner=() =>{
         let pos1Val= boxes[pattern[0]].innerText;
         let pos2Val= boxes[pattern[1]].innerText;
         let pos3Val= boxes[pattern[2]].innerText;
-        if (pos1Val!="" && pos2Val!="" && pos3Val!=""){
-            if (pos1Val===pos2Val && pos2Val===pos3Val){
-                console.log("winner",pos1Val);
+        
+        if (pos1Val !== "" && pos2Val !== "" && pos3Val !== "") {
+            if (pos1Val === pos2Val && pos2Val === pos3Val) {
+                console.log("winner", pos1Val);
                 showWinner(pos1Val);
                 return true;
-            }else {
-                return false;
-            }
-        } 
+            } 
+            
+        }
     }
-}
+    return false;
+}     
+
 
 
 boxes.forEach((box)=>{
@@ -90,7 +98,8 @@ boxes.forEach((box)=>{
 })
 
 
-newgame.addEventListener("click",resetGame);
+
+newgame.addEventListener("click",newGame);
 resetBtn.addEventListener("click",resetGame);
 
 // const gameDraw = () => {
@@ -140,5 +149,5 @@ resetBtn.addEventListener("click",resetGame);
 //     disableBoxes();
 // }
 
-newgame.addEventListener("click",resetGame);
-resetBtn.addEventListener("click",resetGame);
+// newgame.addEventListener("click",resetGame);
+// resetBtn.addEventListener("click",resetGame);
