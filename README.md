@@ -5,8 +5,7 @@ A classic Tic Tac Toe game built using HTML, CSS, and JavaScript — play with a
 ---
 
 ## 📸 Preview
-
-![Tic Tac Toe Preview](preview.png)
+[Live Demo)(https://anushkaa64.github.io/Tictactoe-game)
 
 ---
 
